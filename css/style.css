@@ -1,0 +1,845 @@
+:root {
+    --color-primary: #b63b2b;
+    --color-dark: #202020;
+    --color-text: #414141;
+    --color-muted: #777777;
+    --color-light: #f7f5f1;
+    --color-white: #ffffff;
+    --color-border: #e5e1db;
+
+    --container-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(100% - 48px, var(--container-width));
+    margin-inline: auto;
+}
+
+section {
+    scroll-margin-top: 20px;
+}
+
+
+/* ========================================
+   2. CABECERA
+======================================== */
+
+.header {
+    background-color: var(--color-white);
+}
+
+.header-top {
+    min-height: 125px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 20px;
+}
+
+.edition,
+.header-date {
+    color: var(--color-muted);
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.header-date {
+    text-align: right;
+}
+
+.logo {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: -2px;
+}
+
+.logo img
+{
+    width: 120px;
+    height: 120px;
+}
+
+.logo span {
+    color: var(--color-primary);
+}
+
+.navigation {
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.nav-links {
+    min-height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 42px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 13px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-primary);
+}
+
+
+/* ========================================
+   3. PORTADA PRINCIPAL
+======================================== */
+
+.featured {
+    padding-top: 65px;
+    padding-bottom: 70px;
+
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.featured-content {
+    max-width: 500px;
+}
+
+.category {
+    display: inline-block;
+    color: var(--color-primary);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.featured h1 {
+    margin-top: 20px;
+    margin-bottom: 24px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(36px, 4vw, 58px);
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+}
+
+.featured-content > p {
+    margin-bottom: 30px;
+    color: var(--color-muted);
+    font-size: 16px;
+}
+
+.button {
+    display: inline-block;
+    padding: 13px 25px;
+
+    background-color: var(--color-primary);
+    color: var(--color-white);
+
+    font-size: 13px;
+    font-weight: bold;
+
+    border: 1px solid var(--color-primary);
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.button:hover {
+    background-color: transparent;
+    color: var(--color-primary);
+}
+
+.featured-image {
+    height: 440px;
+    overflow: hidden;
+}
+
+.featured-image img {
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.featured-image:hover img {
+    transform: scale(1.04);
+}
+
+
+/* ========================================
+   4. TÍTULOS DE SECCIÓN
+======================================== */
+
+.section {
+    padding-top: 55px;
+    padding-bottom: 70px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 25px;
+
+    margin-bottom: 35px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.eyebrow {
+    display: block;
+    margin-bottom: 8px;
+
+    color: var(--color-primary);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 36px;
+    line-height: 1.2;
+}
+
+.text-link {
+    font-size: 13px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.text-link:hover {
+    color: var(--color-primary);
+}
+
+
+/* ========================================
+   5. TARJETAS DE NOTICIAS
+======================================== */
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.news-card {
+    min-width: 0;
+}
+
+.card-image {
+    display: block;
+    height: 240px;
+    overflow: hidden;
+    background-color: var(--color-light);
+}
+
+.card-image img {
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.news-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding-top: 22px;
+}
+
+.card-content h3 {
+    margin-top: 12px;
+    margin-bottom: 12px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 23px;
+    line-height: 1.3;
+}
+
+.card-content h3 a {
+    transition: color 0.3s ease;
+}
+
+.card-content h3 a:hover {
+    color: var(--color-primary);
+}
+
+.card-content p {
+    color: var(--color-muted);
+    font-size: 14px;
+}
+
+.read-time {
+    display: inline-block;
+    margin-top: 18px;
+
+    color: var(--color-muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* ========================================
+   6. ARTÍCULOS DESTACADOS
+======================================== */
+
+.articles-section {
+    padding: 70px 0;
+    background-color: var(--color-light);
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 50px;
+}
+
+.article {
+    display: grid;
+    grid-template-columns: 65px 1fr;
+    gap: 20px;
+}
+
+.article-number {
+    color: var(--color-primary);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 42px;
+    line-height: 1;
+}
+
+.article h3 {
+    margin-top: 12px;
+    margin-bottom: 15px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 26px;
+    line-height: 1.3;
+}
+
+.article h3 a:hover {
+    color: var(--color-primary);
+}
+
+.article p {
+    margin-bottom: 20px;
+    color: var(--color-muted);
+    font-size: 14px;
+}
+
+
+/* ========================================
+   7. ESPACIO CULTURAL
+======================================== */
+
+.culture-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 25px;
+}
+
+.culture-card {
+    position: relative;
+    min-width: 0;
+    height: 380px;
+    overflow: hidden;
+    background-color: var(--color-dark);
+}
+
+.culture-card img {
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.culture-card:hover img {
+    transform: scale(1.05);
+}
+
+.culture-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0.05) 75%
+    );
+}
+
+.culture-overlay {
+    position: absolute;
+    z-index: 1;
+    left: 28px;
+    right: 28px;
+    bottom: 28px;
+
+    color: var(--color-white);
+}
+
+.culture-overlay .category {
+    color: #ffb8a9;
+}
+
+.culture-overlay h3 {
+    margin-top: 10px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.culture-overlay p {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #eeeeee;
+}
+
+
+/* ========================================
+   8. BIBLIOTECA DIGITAL
+======================================== */
+
+.library-section {
+    padding: 75px 0;
+    background-color: var(--color-light);
+}
+
+.library-intro {
+    max-width: 330px;
+    color: var(--color-muted);
+    font-size: 14px;
+}
+
+.library-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.book-card {
+    min-width: 0;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+}
+
+.book-cover {
+    min-height: 280px;
+    padding: 25px 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    color: var(--color-white);
+    text-align: left;
+}
+
+.book-cover > span {
+    margin-bottom: 25px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.book-cover h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 29px;
+    line-height: 1.15;
+}
+
+.book-cover p {
+    margin-top: 20px;
+    font-size: 11px;
+}
+
+.cover-one {
+    background-color: #284c43;
+}
+
+.cover-two {
+    background-color: #9c593b;
+}
+
+.cover-three {
+    background-color: #343e65;
+}
+
+.cover-four {
+    background-color: #725c80;
+}
+
+.book-info {
+    padding: 20px;
+}
+
+.book-info h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+.book-info p {
+    margin: 8px 0 18px;
+    color: var(--color-muted);
+    font-size: 12px;
+}
+
+.download-link {
+    display: inline-block;
+    color: var(--color-primary);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.download-link:hover {
+    text-decoration: underline;
+}
+
+
+/* ========================================
+   9. CIERRE EDITORIAL
+======================================== */
+
+.newsletter {
+    padding-top: 70px;
+    padding-bottom: 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.newsletter h2 {
+    max-width: 600px;
+    margin-bottom: 15px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 34px;
+    line-height: 1.2;
+}
+
+.newsletter p {
+    max-width: 600px;
+    color: var(--color-muted);
+    font-size: 14px;
+}
+
+
+/* ========================================
+   10. PIE DE PÁGINA
+======================================== */
+
+.footer {
+    padding: 45px 0;
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer .logo {
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.footer-content > p {
+    color: #cccccc;
+    font-size: 13px;
+}
+
+.footer .copyright {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #444444;
+
+    font-size: 11px;
+}
+
+
+/* ========================================
+   11. TABLETAS
+======================================== */
+
+@media (max-width: 950px) {
+
+    .featured {
+        gap: 30px;
+    }
+
+    .featured-image {
+        height: 360px;
+    }
+
+    .nav-links {
+        gap: 25px;
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .news-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .news-card:last-child .card-image {
+        height: 300px;
+    }
+
+    .library-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .book-cover {
+        min-height: 320px;
+    }
+
+    .articles-grid {
+        gap: 30px;
+    }
+}
+
+
+/* ========================================
+   12. TELÉFONOS
+======================================== */
+
+@media (max-width: 650px) {
+
+    .container {
+        width: min(100% - 32px, var(--container-width));
+    }
+
+    .header-top {
+        min-height: 100px;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 0;
+        padding: 18px 0;
+    }
+
+    .edition,
+    .header-date {
+        text-align: center;
+        font-size: 10px;
+    }
+
+    .logo {
+        font-size: 31px;
+    }
+
+    .navigation {
+        padding: 10px 0;
+    }
+
+    .nav-links {
+        min-height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 20px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .featured {
+        padding-top: 40px;
+        padding-bottom: 45px;
+
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .featured h1 {
+        font-size: 40px;
+    }
+
+    .featured-image {
+        height: 280px;
+    }
+
+    .section {
+        padding-top: 40px;
+        padding-bottom: 45px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .news-card:last-child {
+        grid-column: auto;
+    }
+
+    .card-image,
+    .news-card:last-child .card-image {
+        height: 240px;
+    }
+
+    .card-content h3 {
+        font-size: 22px;
+    }
+
+    .articles-section {
+        padding: 45px 0;
+    }
+
+    .articles-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .article {
+        grid-template-columns: 45px 1fr;
+        gap: 15px;
+    }
+
+    .article-number {
+        font-size: 30px;
+    }
+
+    .article h3 {
+        font-size: 22px;
+    }
+
+    .culture-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .culture-card {
+        height: 320px;
+    }
+
+    .culture-overlay {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .culture-overlay h3 {
+        font-size: 25px;
+    }
+
+    .library-section {
+        padding: 45px 0;
+    }
+
+    .library-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .book-card {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        align-items: stretch;
+    }
+
+    .book-cover {
+        min-height: 240px;
+        padding: 18px 15px;
+    }
+
+    .book-cover h3 {
+        font-size: 23px;
+    }
+
+    .book-cover > span {
+        font-size: 9px;
+    }
+
+    .book-info {
+        padding: 18px 14px;
+        align-self: center;
+    }
+
+    .newsletter {
+        padding-top: 45px;
+        padding-bottom: 45px;
+
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .newsletter h2 {
+        font-size: 29px;
+    }
+
+    .footer {
+        padding: 35px 0;
+    }
+}
+
+
+/* ========================================
+   13. ACCESIBILIDAD
+======================================== */
+
+a:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+```
